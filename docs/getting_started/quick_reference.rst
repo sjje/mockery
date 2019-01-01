@@ -1,15 +1,14 @@
 .. index::
     single: Quick Reference
 
-Quick Reference
+快速参考
 ===============
 
-The purpose of this page is to give a quick and short overview of some of the
-most common Mockery features.
+本页面的目的是简要概述一些最常见的 Mockery 功能。
 
-Do read the :doc:`../reference/index` to learn about all the Mockery features.
+查阅这里 :文档:`../reference/index` ，来学习所有的 Mockery 功能.
 
-Integrate Mockery with PHPUnit, either by extending the ``MockeryTestCase``:
+集成 Mockery 到 PHPUnit, 通过扩展 ``MockeryTestCase``:
 
 .. code-block:: php
 
@@ -19,7 +18,7 @@ Integrate Mockery with PHPUnit, either by extending the ``MockeryTestCase``:
     {
     }
 
-or by using the ``MockeryPHPUnitIntegration`` trait:
+或者使用 ``MockeryPHPUnitIntegration`` trait:
 
 .. code-block:: php
 
@@ -31,34 +30,33 @@ or by using the ``MockeryPHPUnitIntegration`` trait:
         use MockeryPHPUnitIntegration;
     }
 
-Creating a test double:
+ 创建一个 test double:
 
 .. code-block:: php
 
     $testDouble = \Mockery::mock('MyClass');
 
-Creating a test double that implements a certain interface:
+创建一个 test double 实现 MyClass 的接口 MyInterface:
 
 .. code-block:: php
 
     $testDouble = \Mockery::mock('MyClass, MyInterface');
 
-Expecting a method to be called on a test double:
+期望 test double 可以有 foo 的方法可调用:
 
 .. code-block:: php
 
     $testDouble = \Mockery::mock('MyClass');
     $testDouble->shouldReceive('foo');
 
-Expecting a method to **not** be called on a test double:
+期望 test double **没有** foo 方法可以调用:
 
 .. code-block:: php
 
     $testDouble = \Mockery::mock('MyClass');
     $testDouble->shouldNotReceive('foo');
 
-Expecting a method to be called on a test double, once, with a certain argument,
-and to return a value:
+期望 test double 可以调用 foo 使用 $arg 做参数，可被调用一次，并返回 $returnValue 作为返回值。
 
 .. code-block:: php
 
@@ -68,8 +66,7 @@ and to return a value:
         ->with($arg)
         ->andReturn($returnValue);
 
-Expecting a method to be called on a test double and to return a different value
-for each successive call:
+期望 test double 多次调用 foo 方法返回 andReturn 设定的值:
 
 .. code-block:: php
 
@@ -82,19 +79,20 @@ for each successive call:
     $mock->foo(); // int(3);
     $mock->foo(); // int(3);
 
-Creating a runtime partial test double:
+创建一个运行时 partial test double ( partial mock 是说一个类的方法有些是实际调用，有些是使用 mock 的 stub ):
 
 .. code-block:: php
 
     $mock = \Mockery::mock('MyClass')->makePartial();
 
-Creating a spy:
+创建一个 spy:
+( spy 的原理是，如果不打 stub 默认都会执行真实的方法，如果打 stub 则返回 stub 实现。)
 
 .. code-block:: php
 
     $spy = \Mockery::spy('MyClass');
 
-Expecting that a spy should have received a method call:
+期望 spy 可以接受 foo 方法的调用:
 
 .. code-block:: php
 
@@ -104,11 +102,10 @@ Expecting that a spy should have received a method call:
 
     $spy->shouldHaveReceived()->foo();
 
-Not so simple examples
+稍微复杂点的例子
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Creating a mock object to return a sequence of values from a set of method
-calls:
+从一个数组中创建 Mock Object , 用数组的 key 作为 Mock Object 的方法名, value 作为 Mock Object 的返回值:
 
 .. code-block:: php
 
@@ -124,8 +121,7 @@ calls:
         }
     }
 
-Creating a mock object which returns a self-chaining Undefined object for a
-method call:
+创建一个 mock 对象，定义调用 divideBy 将返回一个 \Mockery\Undefined 的实例:
 
 .. code-block:: php
 
@@ -141,7 +137,7 @@ method call:
         }
     }
 
-Creating a mock object with multiple query calls and a single update call:
+创建一个 mock 对象拥有两个可调用的方法:
 
 .. code-block:: php
 
@@ -159,7 +155,7 @@ Creating a mock object with multiple query calls and a single update call:
         }
     }
 
-Expecting all queries to be executed before any updates:
+使用 ordered() 期望所有的查询总是在更新之前执行:
 
 .. code-block:: php
 
@@ -177,8 +173,8 @@ Expecting all queries to be executed before any updates:
         }
     }
 
-Creating a mock object where all queries occur after startup, but before finish,
-and where queries are expected with several different params:
+创建一个 mock 对象 ，定义 query() 方法，在传入不同参数的时候返回不同的值，
+并且使用 ordered() 和 ordered('params') 来规定他们执行的时间:
 
 .. code-block:: php
 

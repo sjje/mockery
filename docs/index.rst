@@ -1,34 +1,21 @@
 Mockery
 =======
 
-Mockery is a simple yet flexible PHP mock object framework for use in unit
-testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is
-to offer a test double framework with a succinct API capable of clearly
-defining all possible object operations and interactions using a human
-readable Domain Specific Language (DSL). Designed as a drop in alternative to
-PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with
-PHPUnit and can operate alongside phpunit-mock-objects without the World
-ending.
+Mockery 是一个简单又灵活的PHP模拟对象框架, 用于使用PHPUnit进行单元测试, 或任何PHP测试框架. 
+Mockery 核心目标是提供一个具有简洁API Test Double 框架, 该框架能够使用人类可读的领域特定语言(DSL)明确定义所有可能的对象操作和交互。 
+Mockery 是一个 phpunit-mock-objects 的替代品，可以轻松的和 PHPUnit 集成使用，并且不会和 phpunit-mock-objects 产生冲突。
 
-Mock Objects
+Mock objects
 ------------
 
-In unit tests, mock objects simulate the behaviour of real objects. They are
-commonly utilised to offer test isolation, to stand in for objects which do
-not yet exist, or to allow for the exploratory design of class APIs without
-requiring actual implementation up front.
+在单元测试中, mock objects 模拟真实对象的行为. 他们通常用于隔离测试，代替其他对象，或者对测试对象依赖的模拟，让被测试对象能正常运作。
 
-The benefits of a mock object framework are to allow for the flexible
-generation of such mock objects (and stubs). They allow the setting of
-expected method calls and return values using a flexible API which is capable
-of capturing every possible real object behaviour in way that is stated as
-close as possible to a natural language description.
+使用模拟测试框架能帮助我们更灵活的生成模拟对象。 使用优雅可阅读性高的 API 来描述模拟对象的行为和属性。
 
-Getting Started
+入门
 ---------------
 
-Ready to dive into the Mockery framework? Then you can get started by reading
-the "Getting Started" section!
+准备开始使用 Mockery framework? 开始阅读文档 "入门" 部分吧!
 
 .. toctree::
     :hidden:
@@ -37,11 +24,11 @@ the "Getting Started" section!
 
 .. include:: getting_started/map.rst.inc
 
-Reference
+指南
 ---------
 
-The reference contains a complete overview of all features of the Mockery
-framework.
+这里包含了 Mockery
+framework 所有功能的完整描述.
 
 .. toctree::
     :hidden:
@@ -53,7 +40,7 @@ framework.
 Mockery
 -------
 
-Learn about Mockery's configuration, reserved method names, exceptions...
+了解 Mockery's 配置, 保留的方法和异常等等
 
 .. toctree::
     :hidden:
@@ -62,10 +49,10 @@ Learn about Mockery's configuration, reserved method names, exceptions...
 
 .. include:: mockery/map.rst.inc
 
-Cookbook
+最佳实践
 --------
 
-Want to learn some easy tips and tricks? Take a look at the cookbook articles!
+想要知道一些简单的技巧和方法，那么你可以开始看看下面的内容
 
 .. toctree::
     :hidden:

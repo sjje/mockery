@@ -1,21 +1,18 @@
 .. index::
     single: Installation
 
-Installation
+安装
 ============
 
-Mockery can be installed using Composer or by cloning it from its GitHub
-repository. These two options are outlined below.
+Mockery 支持使用 Composer 安装或者使用 Git Hub Clone 安装.
 
 Composer
 --------
 
-You can read more about Composer on `getcomposer.org <https://getcomposer.org>`_.
-To install Mockery using Composer, first install Composer for your project
-using the instructions on the `Composer download page <https://getcomposer.org/download/>`_.
-You can then define your development dependency on Mockery using the suggested
-parameters below. While every effort is made to keep the master branch stable,
-you may prefer to use the current stable version tag instead (use the
+使用 Composer 安装 Mockery 你可以在 `getcomposer.org <https://getcomposer.org>`_ 阅读更多的相关信息.
+首先在你的项目中安装 Composer，更多关于 Composer 介绍请查看这里 `Composer download page <https://getcomposer.org/download/>`_.
+然后你可以在你的 composer.json 文件中定义 开发依赖。 如果你认为作者对 Master 分支的稳定性,
+你可以使用 stable 分支安装一个 stable 版本。 (使用
 ``@stable`` tag).
 
 .. code-block:: json
@@ -32,12 +29,9 @@ To install, you then may call:
 
     php composer.phar update
 
-This will install Mockery as a development dependency, meaning it won't be
-installed when using ``php composer.phar update --no-dev`` in production.
+这样安装 Mockery 将被作为开发依赖, 意味着它不会被安装在生成环境，当你使用这个命令安装生成依赖的时候 ``php composer.phar update --no-dev``.
 
 Git
 ---
 
-The Git repository hosts the development version in its master branch. You can
-install this using Composer by referencing ``dev-master`` as your preferred
-version in your project's ``composer.json`` file as the earlier example shows.
+Git repository 在 master 分支上托管开发分支. 你可以在使用 composer 安装的时候在  ``composer.json`` file 中加上``dev-master`` 来使用最新的版本。
