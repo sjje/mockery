@@ -1,14 +1,11 @@
 .. index::
     single: Getting Started; Simple Example
 
-Simple Example
+示例
 ==============
 
-Imagine we have a ``Temperature`` class which samples the temperature of a
-locale before reporting an average temperature. The data could come from a web
-service or any other data source, but we do not have such a class at present.
-We can, however, assume some basic interactions with such a class based on its
-interaction with the ``Temperature`` class:
+假设我们有一个 ``Temperature`` 类， 它在报告一个平均温度之前对一个地区的温度进行. 它的数据可以来自web或者任何其他类型的数据，但我们目前没有这样的数据.
+然而，我们可以根据与 ``Temperature`` 类的交互来假设与这类的一些基本交互：
 
 .. code-block:: php
 
